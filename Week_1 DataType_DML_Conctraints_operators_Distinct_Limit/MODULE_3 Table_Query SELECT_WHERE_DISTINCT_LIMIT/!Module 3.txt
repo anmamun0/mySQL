@@ -1,0 +1,13 @@
+		
+
+	MODULE 03_ Table Query
+		0 Introduction Module 3
+		1 CREATER TABLE Constraints
+		2 SELECT Query
+		3 WHERE Query
+		4 Arithmatic Operaton
+		5 Comparison Operator
+		6 Logical AND, OR, Operators
+		7 DISTINCT, ORDER BY , LIMIT ,OFFSET, LIKE, AS, IN ,NOT IN
+		8 Summary
+		

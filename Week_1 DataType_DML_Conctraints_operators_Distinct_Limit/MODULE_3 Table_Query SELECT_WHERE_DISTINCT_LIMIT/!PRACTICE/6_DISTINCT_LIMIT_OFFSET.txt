@@ -1,0 +1,40 @@
+ 
+CREATE TABLE students
+(
+	id INT PRIMARY KEY,
+    Name VARCHAR(20),
+    Email VARCHAR(50),
+    Depertment VARCHAR(10)
+);
+
+INSERT INTO students
+VALUES(1,'AN Mamun','almamun20044@gmail.com','cse'),
+(2,'John','abc.gmail.com','cse'),
+(3,'Jana','def.gmail.com','HR'),
+(4,'Mary','ghi.gmail.com','cse'),
+(5,'David','abc.gmail.com','sales'),
+(6,'Nan','xyz.gmail.com','HR');
+
+SELECT *FROM students;
+
+
+SELECT DISTINCT depertment FROM students;
+
+SELECT *FROM students
+ORDER BY id ASC;
+
+SELECT *FROM students
+ORDER BY id DESC;
+
+SELECT *FROM students
+ORDER BY id ASC
+LIMIT 3;
+
+SELECT *FROM students
+ORDER BY id ASC
+LIMIT 3
+OFFSET 2;
+
+SELECT *FROM students
+ORDER BY id ASC
+LIMIT 2,3; -- skip first 2 row and return next 3 row --

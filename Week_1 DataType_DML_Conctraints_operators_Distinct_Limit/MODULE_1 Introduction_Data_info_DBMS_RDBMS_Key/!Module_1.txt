@@ -1,0 +1,13 @@
+
+	MODULE 01_ Indoduction
+		0 Introduction
+		1 Data Vs Information
+		2 Database and Types of DataBase
+		3 Table, Record, Field, Value
+		4 DBMS, RDBMS
+		5 Key, Primary Key
+		6 Relation, Foreign Key
+		7 Module 1 Summary
+		8 Quiz 
+		
+		

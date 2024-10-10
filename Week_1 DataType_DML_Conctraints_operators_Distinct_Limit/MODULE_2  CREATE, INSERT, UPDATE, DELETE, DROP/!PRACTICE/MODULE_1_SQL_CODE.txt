@@ -1,0 +1,33 @@
+CREATE DATABASE programming;
+
+USE programming;
+
+CREATE TABLE Student(
+ Roll CHAR(4) PRIMARY KEY,
+ name VARCHAR(25),
+ Marks DOUBLE
+);
+
+DROP TABLE student;
+  
+SELECT * FROM student;
+
+INSERT INTO student
+(Roll,Name,marks) VALUES(1,'Mamun',90);
+
+INSERT INTO student 
+(Roll,Name,Marks) VALUES(2,'Asik',4.60);
+
+SET SQL_SAFE_UPDATES = 0;
+UPDATE student 
+SET Name = "AN.Mmaun"
+WHERE Roll = 1;
+SET SQL_SAFE_UPDATES = 1;
+ 
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM student 
+WHERE Roll=1;
+SET SQL_SAFE_UPDATES = 1;
+
+INSERT INTO student (Roll,Name,Marks) 
+VALUES(1,'Mamun',3.95);

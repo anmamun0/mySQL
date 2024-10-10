@@ -1,0 +1,98 @@
+USE programming;
+
+DROP TABLE student;
+ 
+CREATE TABLE student
+(
+	Roll CHAR(4) PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL,
+    Email VARCHAR(60) UNIQUE,
+	Address VARCHAR(255),
+	Age INT CHECK(Age>10)
+);
+SELECT *FROM student;
+
+INSERT INTO student(Roll,Name,Email,Address,Age)
+VALUES(0001,'','almamun20044@gmail.com','Sylhet',11);
+
+INSERT INTO student(Roll,Name,Email,Address,Age)
+VALUES(0002,'Asik','almamun20044@gmail.com','Sylhet',11);
+ 
+
+CREATE TABLE student
+(
+	Roll CHAR(4),
+    Name VARCHAR(50) NOT NULL,
+    Email VARCHAR(60),
+	Address VARCHAR(255),
+	Age INT,
+    PRIMARY KEY(Roll),
+    UNIQUE(Email),
+    CHECK(Age>10)
+);
+CREATE TABLE student
+(
+	Roll CHAR(4),
+    Name VARCHAR(50) NOT NULL,
+    Email VARCHAR(60),
+	Address VARCHAR(255),
+	Age INT,
+    Constraint PRIMARY KEY(Roll),
+    Constraint UNIQUE(Email),
+    Constraint CHECK(Age>10)
+);
+CREATE TABLE student
+(
+	Roll CHAR(4),
+    Name VARCHAR(50) NOT NULL,
+    Email VARCHAR(60),
+	Address VARCHAR(255),
+	Age INT,
+    Constraint pk_rule PRIMARY KEY(Roll),
+    Constraint unique_rule UNIQUE(Email),
+    Constraint checked_rule CHECK(Age>10)
+);
+
+
+CREATE TABLE Libary
+(
+	BookName VARCHAR(50) PRIMARY KEY ,
+	WhoHired_Roll CHAR(4),
+    FOREIGN KEY(WhoHired_Roll) REFERENCES Student(Roll)
+);
+ 
+
+
+CREATE TABLE Libary
+(
+	BookName VARCHAR(50) PRIMARY KEY ,
+	WhoHired_Roll CHAR(4),
+    Constraint buy_book_rule FOREIGN KEY(WhoHired_Roll) REFERENCES Studen(Roll)
+);
+
+
+CREATE TABLE course
+(
+	CouseName VARCHAR(10),
+    University VARCHAR(10),
+    Credit INT,
+    
+    PRIMARY KEY(CouseName,University)
+);
+
+SELECT *FROM course;
+
+SELECT *FROM Student;
+
+drop table newtable;
+ 
+CREATE TABLE newtable (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    order_date DATE
+);
+
+SELECT *FROM NEWTABLE;
+
+INSERT INTO newtable (id,name,order_date)
+VALUES (1,'AN Mamun',current_date);

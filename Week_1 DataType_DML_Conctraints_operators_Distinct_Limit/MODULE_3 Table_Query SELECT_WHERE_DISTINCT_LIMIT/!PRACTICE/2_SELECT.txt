@@ -1,0 +1,2 @@
+SELECT name, age FROM employees;
+SELECT * FROM employees;

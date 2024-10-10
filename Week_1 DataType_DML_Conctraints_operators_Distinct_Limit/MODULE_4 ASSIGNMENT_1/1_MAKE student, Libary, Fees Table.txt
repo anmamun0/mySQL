@@ -1,0 +1,112 @@
+ -- A. Making A Libary Table --
+CREATE TABLE student
+(
+	Roll CHAR(6) PRIMARY KEY,
+    Name VARCHAR(20),
+    Depertment VARCHAR(20),
+    session CHAR(4),
+    Phone CHAR(11),
+    Email VARCHAR(50),
+    Constraint valid_email CHECK(Email LIKE '%@%.com')
+);
+SELECT *FROM student;
+
+INSERT INTO student(roll,name,depertment,session,phone,email)
+VALUES(670029,'AN Mamun','CSE','2024','01782059949','almamun20044@gmail.com');
+
+INSERT INTO student
+VALUES(670030,'Sohan','CSE',2024,'01712345678','almamun20044@gmail.com'),
+(670031,'Sohan','CSE',2024,'01712345678','sohan@gmail.com'),
+(780001,'Sami','EEE',2024,'01712345678','sami@yeahoo.com'),
+(900001,'Ashik','Civil',2024,'01712345678','ashik@gmail.com'),
+(670032,'Ridoy','CSE',2024,'01712345678','ridoy@phitron.com'),
+(780002,'Jon','EEE',2024,'01712345678','jon@gmail.com');
+
+
+
+-- B. Making Libary Table -- 
+CREATE TABLE libary
+(
+	Book VARCHAR(50) PRIMARY KEY,
+    Who_Hire_Roll CHAR(6), 
+    Purchase DATE,
+    Depertment VARCHAR(20),
+    
+    constraint Buy_Book_Rules FOREIGN KEY(Who_Hire_Roll) REFERENCES student(Roll)
+);
+
+SELECT *FROM libary;
+
+INSERT INTO libary(book,who_hire_roll,purchase,depertment)
+VALUES('C Language',670029,CURRENT_DATE(),'CSE'),
+('C++ Language',670029,CURRENT_DATE(),'CSE'),
+('Algorithms',670029,CURRENT_DATE(),'CSE'),
+('MicroController',780002,CURRENT_DATE(),'EEE');
+ 
+
+-- C. Making Fees Table --
+CREATE TABLE Fees
+(
+	Book VARCHAR(50) PRIMARY KEY,
+    Who_buy CHAR(6),
+    Fee INT,
+    Buy_date DATE, 
+    Constraint Available_in_Libary FOREIGN KEY(Book) REFERENCES libary(Book)
+);
+
+SELECT *FROM fees;
+
+INSERT INTO fees (book, who_buy,fee,buy_date)
+VALUES ('C Language',670029,100,CURRENT_DATE()),
+('C++ Language',670029,100,CURRENT_DATE()),
+('Algorithms',670029,400,CURRENT_DATE()),
+('MicroController',780002,600,CURRENT_DATE());
+
+
+SELECT *FROM student;
+
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE student
+SET session = 2025
+WHERE session=2024;
+
+SET SQL_SAFE_UPDATES = 1;
+
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM student
+WHERE roll = 670032;
+SET SQL_SAFE_UPDATES = 1;
+
+CREATE TABLE employee
+(
+	EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(20),
+	LastName VARCHAR(20),
+	Age INT,
+    Depertment VARCHAR(20)
+); 
+
+INSERT INTO employee(employeeid,firstname,lastname,age,depertment)
+VALUES(1,'john','Doe',28,'Sales'),
+(2,'john','Jana',32,'Marketing'),
+(3,'john','Michael',35,'Finacne'),
+(4,'john','William',30,'HR'),
+(5,'john','Olivia',28,'Engineering');
+
+SELECT *FROM employee;
+
+SELECT DISTINCT depertment FROM employee;
+
+SELECT lastname FROM employee
+ORDER BY age DESC;
+
+
+SELECT lastname FROM employee
+WHERE  age>30  AND depertment='marketing';
+
+SELECT * FROM employee 
+WHERE lastname LIKE '%son%';
+
+SELECT *FROM employee
+WHERE depertment='engineering';

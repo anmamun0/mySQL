@@ -1,0 +1,13 @@
+
+	MODULE 02_ Mysql and Basic Query
+		0 Introduction
+		1 Query, SQL 01
+		2 Query, SQL 02
+		3 MySQL Download and Install
+		4 SQL VS mySQL
+		5 mySQL DataTypes
+		6 CREATE INSERT, UPDATE ,DELETE, DROP
+		7 Module 2 Summary
+		8 Quiz 
+		
+		
