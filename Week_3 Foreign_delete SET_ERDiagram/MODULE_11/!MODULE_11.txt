@@ -1,0 +1,11 @@
+ 
+	MODULE 11: PYTHON @MySQL
+		
+		Code Link : https://drive.google.com/drive/folders/1JX7QBUVsEwdYm8yvzklXT4PAxj9e2WQ5
+		0 Instroduction Module 11
+		1 Python MysQl setup
+		2 Execute mySQL Query in Python
+		3 Student Libary Management System ERD
+		4 Student Libary Management System Schema SQL Code
+		5 Feture ToDo
+		6 Summary Module 11
