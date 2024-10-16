@@ -1,9 +1,0 @@
-MODULE 07 : Join
-	0 Introduction Module 7
-	1 Joining Tables
-	2 Joining Tables without using JOIN Query
-	3 Joinng Tables with JOIN Query
-	4 INNER, LEFT, RIGHT, CROSS Join
-	5 SELF JOIN
-	6 Examples of JOIN Query
-	7 Summary
